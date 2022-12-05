@@ -1,7 +1,7 @@
-import sys
-sys.path.append("../")
-sys.path.append("./")
 import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__))))
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../"))
 import glob
 
 import numpy as np
@@ -12,7 +12,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--model', type=str, default='Res16UNet34C', help='Model name')
-parser.add_argument('--weights', type=str, default='/DATA/lapfu_git/dvm_weight.pth')
+parser.add_argument('--weights', type=str, default='/DATA/lapfu/dvm_weight.pth')
 parser.add_argument('--marker', type=int, default=111)
 parser.add_argument('--bn_momentum', type=float, default=0.05)
 parser.add_argument('--voxel_size', type=float, default=0.01)
@@ -23,7 +23,7 @@ labeler = Labeler(config)
 view = True
 
 if __name__ == '__main__':
-    target_dir = "/DATA/lapfu_git/subjects/hyomin_example/train"
+    target_dir = "/DATA/lapfu/subjects/hyomin_example/train"
 
     pcd_dir = os.path.join(target_dir, "pcd")
     pcds = sorted(glob.glob(os.path.join(pcd_dir, "*.ply")))

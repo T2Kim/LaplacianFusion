@@ -150,23 +150,23 @@ if __name__ == '__main__':
                             return_verts=True)
     v_new_warp_vec = (deformed_verts + input_transl).cpu().numpy()
 
-    # Visualization
-    if cfg.VISUALIZE:
-        cfg.rootLogger.info("View")
-        from lib.O3D_NB_Vis import o3d_nb_vis
+    ## Visualization
+    # if cfg.VISUALIZE:
+    #     cfg.rootLogger.info("View")
+    #     from lib.O3D_NB_Vis import o3d_nb_vis
 
-        pcd_list = []
+    #     pcd_list = []
 
-        for pcd in pcds:
-            tmp_pcd = o3d.io.read_point_cloud(pcd)
-            pcd_list.append(tmp_pcd)
+    #     for pcd in pcds:
+    #         tmp_pcd = o3d.io.read_point_cloud(pcd)
+    #         pcd_list.append(tmp_pcd)
 
-        v_new_rest_vec_view = v_new_rest_vec + input_transl[0].squeeze().cpu().numpy()
-        v_new_rest_vec_view[:, :, 0] += 1.5
-        o3d_nb_vis({"Mesh0" : {"vertices":v_new_rest_vec_view, "triangles": template_f},
-                    "Mesh1" : {"vertices":v_new_warp_vec, "triangles": template_f},
-                    "O3D_PCD0" : {"pcd":pcd_list}
-                    })
+    #     v_new_rest_vec_view = v_new_rest_vec + input_transl[0].squeeze().cpu().numpy()
+    #     v_new_rest_vec_view[:, :, 0] += 1.5
+    #     o3d_nb_vis({"Mesh0" : {"vertices":v_new_rest_vec_view, "triangles": template_f},
+    #                 "Mesh1" : {"vertices":v_new_warp_vec, "triangles": template_f},
+    #                 "O3D_PCD0" : {"pcd":pcd_list}
+    #                 })
 
     print("=========================   save   ===========================")
     pcd_dir = os.path.join(target_dir, "train/pcd")

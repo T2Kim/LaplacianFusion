@@ -16,6 +16,6 @@ nvidia-docker container run \
 	--volume="/tmp/.X11-unix:/tmp/.X11-unix" \
 	--volume="${CODEDIR}:/code" \
 	--volume="${DATADIR}:/DATA" \
-	--name lapFusion_test	\
+	--name dvm_sparse	\
 	min00001/dvm_run \
-	bash
+	/root/miniconda3/envs/lapfu/bin/python /code/DVM/pcd2dvm_sparse.py

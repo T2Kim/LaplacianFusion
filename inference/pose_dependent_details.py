@@ -245,6 +245,17 @@ if __name__ == '__main__':
     #endregion
 
 
+    # Save
+    for t in tqdm(range(recon_frames), desc="Save"):
+        basename = os.path.basename(coarse_files[t])
+        filename_recon = os.path.join(recon_dir, os.path.splitext(basename)[0] + ".posed.ply")
+        tmp_mesh = o3d.geometry.TriangleMesh()
+        tmp_mesh.vertices = o3d.utility.Vector3dVector(recon_vertex_t[t])
+        tmp_mesh.triangles = o3d.utility.Vector3iVector(anchor["shead_" + density_postfix + "_tri"])
+        tmp_mesh.compute_vertex_normals()
+        o3d.io.write_triangle_mesh(filename_recon, tmp_mesh)
+
+
     # Visualization
     if cfg.VISUALIZE:
         cfg.rootLogger.info("View")
@@ -261,16 +272,4 @@ if __name__ == '__main__':
         o3d_nb_vis({"Mesh0" : {"vertices":recon_vertex_t, "triangles": anchor["shead_" + density_postfix + "_tri"]},
                     "O3D_PCD0" : {"pcd":pcd_list}
                     })
-
-
-    # Save
-    for t in tqdm(range(recon_frames), desc="Save"):
-        basename = os.path.basename(coarse_files[t])
-        filename_recon = os.path.join(recon_dir, os.path.splitext(basename)[0] + ".posed.ply")
-        tmp_mesh = o3d.geometry.TriangleMesh()
-        tmp_mesh.vertices = o3d.utility.Vector3dVector(recon_vertex_t[t])
-        tmp_mesh.triangles = o3d.utility.Vector3iVector(anchor["shead_" + density_postfix + "_tri"])
-        tmp_mesh.compute_vertex_normals()
-        o3d.io.write_triangle_mesh(filename_recon, tmp_mesh)
-
 
