@@ -53,7 +53,7 @@ pip install -r ./requirements.txt
 python ./preprocessing/fit_smplx.py
 ./script/run_learning.sh
 ```
-
+- You can find result meshes in "lapfu/subjects/*/train/recon"
 
 ## License
 This software is being made available under the terms in the [LICENSE](LICENSE) file.
