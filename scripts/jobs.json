@@ -1,0 +1,112 @@
+{
+    "hyomin_example":{
+        "target_gender": "male",
+        "RGBD": true,
+        "flathand": false,
+        "lap_reg_weight_base": 5,
+        "lap_reg_weight_offset": 5,
+        "noise_offset": false,
+        "noise_lap": true,
+        "epoch_offset":100,
+        "epoch_lap":30
+    },
+    "03375_longlong_POP":{
+        "target_gender": "male",
+        "RGBD": false,
+        "flathand": true,
+        "lap_reg_weight_base": 5,
+        "lap_reg_weight_offset": 200,
+        "noise_offset": false,
+        "noise_lap": true,
+        "epoch_offset":100,
+        "epoch_lap":30
+    },
+    "beatric":{
+        "target_gender": "female",
+        "RGBD": false,
+        "flathand": true,
+        "lap_reg_weight_base": 0.1,
+        "lap_reg_weight_offset": 50,
+        "noise_offset": false,
+        "noise_lap": true,
+        "epoch_offset":300,
+        "epoch_lap":100
+    },
+    "carla":{
+        "target_gender": "female",
+        "RGBD": false,
+        "flathand": true,
+        "lap_reg_weight_base": 0.1,
+        "lap_reg_weight_offset": 50,
+        "noise_offset": false,
+        "noise_lap": true,
+        "epoch_offset":300,
+        "epoch_lap":100
+    },
+    "rp_carla_posed_004":{
+        "target_gender": "female",
+        "RGBD": false,
+        "flathand": true,
+        "lap_reg_weight_base": 0.1,
+        "lap_reg_weight_offset": 0.05,
+        "noise_offset": true,
+        "noise_lap": true,
+        "epoch_offset":300,
+        "epoch_lap":100
+    },
+    "new_carla":{
+        "target_gender": "female",
+        "RGBD": false,
+        "flathand": true,
+        "lap_reg_weight_base": 0.1,
+        "lap_reg_weight_offset": 0.1,
+        "noise_offset": false,
+        "noise_lap": true,
+        "epoch_offset":600,
+        "epoch_lap":200
+    },
+    "00096":{
+        "target_gender": "male",
+        "RGBD": false,
+        "flathand": true,
+        "lap_reg_weight_base": 5,
+        "lap_reg_weight_offset": 200,
+        "noise_offset": false,
+        "noise_lap": true,
+        "epoch_offset":100,
+        "epoch_lap":30
+    },
+    "03223_sl_hips_raw":{
+        "target_gender": "female",
+        "RGBD": false,
+        "flathand": true,
+        "lap_reg_weight_base": 1,
+        "lap_reg_weight_offset": 100,
+        "noise_offset": false,
+        "noise_lap": true,
+        "epoch_offset":100,
+        "epoch_lap":30
+    },
+    "anna":{
+        "target_gender": "female",
+        "RGBD": true,
+        "flathand": true,
+        "lap_reg_weight_base": 5,
+        "lap_reg_weight_offset": 100,
+        "noise_offset": false,
+        "noise_lap": true,
+        "epoch_offset":100,
+        "epoch_lap":30
+    },
+    "00114":{
+        "target_gender": "female",
+        "RGBD": true,
+        "flathand": true,
+        "lap_reg_weight_base": 5,
+        "lap_reg_weight_offset": 5,
+        "noise_offset": false,
+        "noise_lap": false,
+        "epoch_offset":300,
+        "epoch_lap":50
+    }
+}
